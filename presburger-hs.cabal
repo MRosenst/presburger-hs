@@ -1,0 +1,68 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 30a3f5dcc103e8d1b51aa56d1a0a7c5dd65afeddbb4491693576105423218534
+
+name:           presburger-hs
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/MRosenst/presburger-hs#readme>
+homepage:       https://github.com/MRosenst/presburger-hs#readme
+bug-reports:    https://github.com/MRosenst/presburger-hs/issues
+author:         Max Rosenstein
+maintainer:     mrosenstein99@gmail.com
+copyright:      2020
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/MRosenst/presburger-hs
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_presburger_hs
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , megaparsec
+    , text
+  default-language: Haskell2010
+
+executable presburger-hs-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_presburger_hs
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , megaparsec
+    , presburger-hs
+    , text
+  default-language: Haskell2010
+
+test-suite presburger-hs-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_presburger_hs
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , megaparsec
+    , presburger-hs
+    , text
+  default-language: Haskell2010
