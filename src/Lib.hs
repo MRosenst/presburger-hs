@@ -13,6 +13,7 @@ data Expression
     | Zero
     | One
     | Sum Expression Expression
+    deriving (Eq, Show)
 
 data Statement
     = Equals Expression Expression
